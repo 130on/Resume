@@ -1,7 +1,16 @@
+
+
+
+
+
+
+
 // ProjectsPreview.jsx
 
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SlideInSection from '../../components/SlideInSection';
+import { Link } from 'react-router-dom';
 
 function ProjectsPreview() {
   const previews = [
@@ -23,21 +32,43 @@ function ProjectsPreview() {
     }
   ];
 
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % previews.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [previews.length]);
+
   return (
     <SlideInSection direction="left" className="bg-primary-subtle">
-      <h2 className="mb-4">Check out my projects page</h2>
+      <h2 className="mb-4">Featured Projects</h2>
 
-      <div className="row">
-        {previews.map((project, idx) => (
-          <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4">
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-8 col-lg-6 mb-4">
+          <Link to="/projects" className="text-decoration-none">
             <div className="card h-100 shadow-sm">
-              <img src={project.image} alt={project.title} className="card-img-top rounded-top" />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={previews[current].image}
+                  src={previews[current].image}
+                  alt={previews[current].title}
+                  className="card-img-top rounded-top"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </AnimatePresence>
               <div className="card-body">
-                {/* <h5 className="card-title text-center fw-bold text-dark">{project.title}</h5> */}
+                <h5 className="card-title text-center fw-bold text-dark">
+                  {previews[current].title}
+                </h5>
               </div>
             </div>
-          </div>
-        ))}
+          </Link>
+        </div>
       </div>
     </SlideInSection>
   );
