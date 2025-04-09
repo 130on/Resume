@@ -1,28 +1,45 @@
+// ProjectsPreview.jsx
+
 import { motion } from 'framer-motion';
 import SlideInSection from '../../components/SlideInSection';
 
 function ProjectsPreview() {
+  const previews = [
+    {
+      title: 'UI Timeline – Web Development',
+      image: '/images/UITimeline.jpg',
+    },
+    {
+      title: 'Algorithm Gauge Application',
+      image: '/images/AlgoGaugeHome.png',
+    },
+    {
+      title: 'RV Park Management Appliction',
+      image: '/images/RVPark.jpg',
+    },
+    {
+      title: 'Invoicing appliction',
+      image: '/images/Invoice.jpg',
+    }
+  ];
+
   return (
     <SlideInSection direction="left" className="bg-primary-subtle">
+      <h2 className="mb-4">Check out my projects page</h2>
 
-      <h2 className="mb-4">Featured Projects</h2>
-
-      <div className="mb-4">
-        <h5>
-          <a href="https://ui-timeline.netlify.app/" target="_blank" rel="noreferrer">
-            UI Timeline – Web Development
-          </a>
-        </h5>
-        <p className="text-muted">A modern timeline interface built and deployed using front-end tools.</p>
+      <div className="row">
+        {previews.map((project, idx) => (
+          <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4">
+            <div className="card h-100 shadow-sm">
+              <img src={project.image} alt={project.title} className="card-img-top rounded-top" />
+              <div className="card-body">
+                {/* <h5 className="card-title text-center fw-bold text-dark">{project.title}</h5> */}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div>
-        <h5>Algorithm Gauge Application</h5>
-        <p className="text-muted">
-          Hosted on WSU servers — features experiment tracking, history views, and multi-user collaboration.
-        </p>
-      </div>
-      </SlideInSection>
+    </SlideInSection>
   );
 }
 

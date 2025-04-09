@@ -42,7 +42,7 @@ function Resume() {
             Dear Sir/Madam, <br /><br />
             Thank you for taking the time to view my resume website and credentials. 
               I am a Computer Science major. Highly skilled with an LL.B and diverse work experience. In the process of a career change. Looking to join an ambitious, hardworking, 
-              professional team so we can grow together. Bilingual in Hebrew and English.<br />
+              professional team so we can grow together. Bilingual in Hebrew and English.<br /> <br />
 
               I will be graduating in May 2025, and I am enthusiastic about continuing my new journey and finding a full-time software engineer position.<br/> 
               I have experience with OOP using various programming languages, and frameworks and working with relational and non relational databases.<br/> <br/> 
@@ -54,12 +54,12 @@ function Resume() {
               to improve and expand them. <br /><br />
             
               Since a resume cannot fully explain in detail all of my skills, abilities, and accomplishments, nor can it predict my potential within your organization, 
-              I would welcome a personal interview to further discuss the merging of my training and background with the needs and goals for your company.<br/>
+              I would welcome a personal interview to further discuss the merging of my training and background with the needs and goals for your company.<br/> <br />
             
               I look forward to the opportunity to meet with you and members of your team.<br/><br/>
 
             <br /><br />
-            Sincerely,<br />
+            Sincerely,<br /> <br />
             Alon Saar
           </p>
       </ResumeSection>
@@ -93,8 +93,8 @@ function Resume() {
           {["Python", "C++", "JavaScript", "Java", "C#", "C", "Bash",
             "React", "Node.js", "Express.js", "Django", ".NET",
             "MySQL", "MongoDB", "Git", "VSCode", "Visual Studio",
-            "Docker", "Windows", "Linux", "PostgreSQL", "TypeScript",
-            "REST APIs", "Firebase", "Figma"].map((skill, i) => (
+            "Docker", "Windows", "Linux", 
+            "REST APIs"].map((skill, i) => (
               <div key={i} className="col">
                 <div className="border rounded px-3 py-2 text-center bg-light h-100">{skill}</div>
               </div>
