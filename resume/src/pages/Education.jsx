@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import BackToTop from '../components/BackToTop';
+import ScrollToHome from '../components/ScrollToHome';
 
 function Education() {
   const [selectedAward, setSelectedAward] = useState(null);
@@ -122,6 +123,7 @@ function Education() {
         </ul>
       </div>
       <BackToTop/>
+      <ScrollToHome/>
     </section>
   );
 }

@@ -1,8 +1,38 @@
 // Projects.jsx
 
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import BackToTop from '../components/BackToTop';
+import ScrollToHome from '../components/ScrollToHome';
 
 function Projects() {
+  const [activeMedia, setActiveMedia] = useState(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        setActiveMedia(null);
+      }
+    }
+
+    function handleClickOutside(event) {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setActiveMedia(null);
+      }
+    }
+
+    if (activeMedia) {
+      document.addEventListener('keydown', handleKeyDown);
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeMedia]);
+
   const projects = [
     {
       title: 'UI Timeline – Web Development',
@@ -11,6 +41,7 @@ function Projects() {
       demo: 'https://github.com/130on/CS3650-UI-Timeline',
       tech: ['JavaScript', 'React', 'Node', 'Bootstrap'],
       gif: '/images/ui-timeline-preview.gif',
+      video: '/videos/UiTimeLIneVid.mp4',
     },
     {
       title: 'RV Park Management Application',
@@ -19,6 +50,7 @@ function Projects() {
       demo: 'https://github.com/130on/RVParkManagement',
       tech: ['Node.js', 'Express.js', 'MySQL', 'Bootstrap', 'EJS'],
       gif: '/images/RVPark-preview.gif',
+      video: '/videos/RVParkVid.mp4',
     },
     {
       title: 'Invoice Application',
@@ -27,6 +59,7 @@ function Projects() {
       demo: 'https://github.com/130on/CS3280-GroupProject---Win-WPF--Invoice',
       tech: ['.NET', 'C#', 'WPF'],
       gif: '/images/Invoicing-preview.gif',
+      video: '/videos/InvoiceVid.mp4',
     },
     {
       title: 'Algorithm Gauge Application',
@@ -35,6 +68,7 @@ function Projects() {
       demo: '',
       tech: ['MERN', 'React', 'JS', 'MongoDB', 'Plotly'],
       gif: '/images/algorithm-gauge-preview.gif',
+      video: '/videos/AlgoGaugeVid.mp4',
     }
   ];
 
@@ -54,7 +88,13 @@ function Projects() {
           >
             <div className="card h-100 shadow-sm">
               {project.gif && (
-                <img src={project.gif} alt={`${project.title} preview`} className="card-img-top rounded-top" />
+                <img
+                  src={project.gif}
+                  alt={`${project.title} preview`}
+                  className="card-img-top rounded-top"
+                  onClick={() => setActiveMedia(project.video || project.gif)}
+                  style={{ cursor: 'pointer' }}
+                />
               )}
               <div className="card-body d-flex flex-column">
                 <h5 className={`card-title fw-bold ${project.link ? 'text-primary' : 'text-dark'}`}>
@@ -84,6 +124,29 @@ function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {/* Modal for video or fallback gif preview */}
+      {activeMedia && (
+        <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+          <div className="modal-dialog modal-xl" role="document">
+            <div className="modal-content" ref={modalRef}>
+              <div className="modal-header">
+                <h5 className="modal-title">Preview</h5>
+                <button type="button" className="btn-close" onClick={() => setActiveMedia(null)} aria-label="Close"></button>
+              </div>
+              <div className="modal-body text-center">
+                {activeMedia.endsWith('.mp4') ? (
+                  <video src={activeMedia} controls autoPlay loop muted className="img-fluid rounded" />
+                ) : (
+                  <img src={activeMedia} alt="Preview enlarged" className="img-fluid rounded" />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      <ScrollToHome/>
+      <BackToTop/>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import BackToTop from '../components/BackToTop';
+import ScrollToHome from '../components/ScrollToHome';
 
 function ResumeSection({ id, title, children, isActive, onActivate }) {
     const handleMouseEnter = () => onActivate(id);
@@ -111,7 +112,7 @@ function Resume() {
       >
         <ul>
           <li><strong>Database Analyst</strong> – Hawaii County Wastewater Division (2022)</li>
-          <li><strong>Web App Developer</strong> – Weber State University (2020–2022)</li>
+          <li><strong>Web App Developer</strong> – Weber State University (2022)</li>
         </ul>
       </ResumeSection>
 
@@ -127,7 +128,10 @@ function Resume() {
           <li><strong>Legal Intern</strong> – Arie-Saar Law Firm, Tel Aviv (2015–2017)</li>
         </ul>
       </ResumeSection>
+    <ScrollToHome />
     <BackToTop />
+    
+
     </div>
     
   );
