@@ -47,7 +47,7 @@ function Education() {
             Weber State University
           </a>
         </h2>
-        <p className="fw-semibold">Bachelor of Science (BS) – Computer Science (May 2025)</p>
+        <p className="fw-semibold">Bachelor of Science (BS) – Computer Science (May 2025) GPA: 3.96</p>
         <p className="fw-semibold">Associate of Applied Science (AAS) – Computer Science (2023)</p>
         <a href="https://www.weber.edu/" target="_blank" rel="noreferrer">
           <img src="/images/wsu_logo.jpg" alt="Weber State logo" style={{ maxWidth: '100px' }} />
@@ -115,11 +115,17 @@ function Education() {
       <div className="mt-5 text-center">
         <h3 className="text-success">Transcript Download</h3>
         <ul className="list-unstyled">
-          <li>
-            <a href="/files/WES_report_sample.pdf" target="_blank" rel="noreferrer" className="text-decoration-underline">
-              Bachelor's Degree Evaluation Report (Law)
+        <li>
+            <a href="/files/Unofficial_Academic_Transcript-BS.pdf" target="_blank" rel="noreferrer" className="text-decoration-underline">
+              Bachelor of Science (BS) - Computer Science - Unofficial Transcript
             </a>
           </li>
+          <li>
+            <a href="/files/WES_report_sample.pdf" target="_blank" rel="noreferrer" className="text-decoration-underline">
+              Bachelor of Laws (LL.B) Degree - WES Evaluation Report
+            </a>
+          </li>
+          
         </ul>
       </div>
       <BackToTop/>
