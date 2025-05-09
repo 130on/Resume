@@ -54,7 +54,7 @@ function Projects() {
     },
     {
       title: 'Invoice Application',
-      description: 'Elementry invoicing app built using Windows WPF',
+      description: 'Elementary invoicing app built using Windows WPF',
       link: '',
       demo: 'https://github.com/130on/CS3280-GroupProject---Win-WPF--Invoice',
       tech: ['.NET', 'C#', 'WPF'],
