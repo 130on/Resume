@@ -45,7 +45,7 @@ function Resume() {
               I am a Computer Science major. Highly skilled with an LL.B and diverse work experience. In the process of a career change. Looking to join an ambitious, hardworking, 
               professional team so we can grow together. Bilingual in Hebrew and English.<br /> <br />
 
-              I will be graduating in May 2025, and I am enthusiastic about continuing my new journey and finding a full-time software engineer position.<br/> 
+              I graduated in May 2025, and I am enthusiastic about continuing my new journey and finding a full-time software engineer position.<br/> 
               I have experience with OOP using various programming languages, and frameworks and working with relational and non relational databases.<br/> <br/> 
             
               I am a quick learner that is accustomed to a fast-paced work environment where deadlines are a priority and handling multiple jobs at once is the norm.<br/>

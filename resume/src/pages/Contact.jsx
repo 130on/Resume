@@ -37,7 +37,7 @@ function Contact() {
       <div className="mb-4">
         <p><strong>Email:</strong> <a href="mailto:alonsaar8@gmail.com">alonsaar8@gmail.com</a></p>
         <p><strong>Phone:</strong> <a href="tel:8088253322">(808) 825-3322</a></p>
-        <p><strong>Location:</strong> P.O Box 129, Hakalau, HI 96710</p>
+        <p><strong>Location:</strong> Kailua-Kona, HI 96740</p>
       </div>
 
       <form ref={form} onSubmit={sendEmail} className="border rounded p-4 shadow-sm bg-light">

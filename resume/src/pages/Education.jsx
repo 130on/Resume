@@ -47,7 +47,7 @@ function Education() {
             Weber State University
           </a>
         </h2>
-        <p className="fw-semibold">Bachelor of Science (BS) – Computer Science (May 2025) GPA: 3.96</p>
+        <p className="fw-semibold">Bachelor of Science (BS) – Computer Science (May 2025) Summa Cum Laude | GPA: 3.93</p>
         <p className="fw-semibold">Associate of Applied Science (AAS) – Computer Science (2023)</p>
         <a href="https://www.weber.edu/" target="_blank" rel="noreferrer">
           <img src="/images/wsu_logo.jpg" alt="Weber State logo" style={{ maxWidth: '100px' }} />
