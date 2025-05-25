@@ -10,6 +10,10 @@ function Education() {
 
   const awards = [
     {
+      title: "B.S - Computer Science",
+      file: "/files/BScs-WSU.pdf",
+    },
+    {
       title: "LL.B - Law",
       file: "/files/TLV_LLB_AlonSaar.pdf",
     },
